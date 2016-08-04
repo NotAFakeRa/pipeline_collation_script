@@ -175,7 +175,6 @@ for a in ul_interval:
 
 
 # Easy to remove veto segments from upper limit bands too!
-# TODO ask Ben+Teviet etc. for go-ahead
 # Just need to uncomment the following three lines:
 ul_interval.update( veto_interval ) # O( v*log(n) ), v is number of vetoes
 ul_interval.split_overlaps()  # O( n*log(n) ), best case, where
