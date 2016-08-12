@@ -11,4 +11,11 @@ A schematic of how this works:
 
 <img src="https://github.com/NotAFakeRa/pipeline_collation_script/raw/master/CollateScript_MergingBands_Schematic.png">
 
+An XML file containing the search bands is compared to another XML file containing what we want in terms of upper limits. These are compared to the regions we know to be bad, contained in a veto bands XML. These are, respectively, read in and converted to intervals, containing information on the job number as a data field.
+
+Then, the intersection of the search and the upper limit band is taken. This is then combined with the veto bands. The result is split by <i>any</i> overlap with veto bands and the overlapping segments are removed. In other words, this region is excised (before reading the respective file, indexed by job number). This splitting process is the most labour-intensive one, costing <i>O</i>(N log(N)) operations, where N is the total number of segments.
+
+
+
+
 Thanks, biologists! 
